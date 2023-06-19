@@ -1,0 +1,24 @@
+.box1 {
+  background-color: #5b7bb2;
+    height: 120px;
+}
+
+.textos {
+  color: white !important;
+}
+
+.linkedin {
+  font-size: 30 ;
+  color: white !important;
+}
+
+.github {
+  font-size: 30;
+  color: white;
+}
+
+.box2 {
+  background-color: #82b1ff;
+    height: 60px;
+}
+

@@ -1,19 +1,28 @@
 import React from 'react'
 import Navbar from './components/estaticos/navbar/Navbar'
 import Footer from './components/estaticos/footer/Footer'
-import { Grid } from '@material-ui/core'
-import Home from './assets/pages/Home'
+import Home from './assets/pages/home/Home'
 import './App.css'
-import Dashboard from './components/estaticos/navbar/Navbar'
+import Login from './assets/pages/login/Login'
 import { Copyright } from '@mui/icons-material'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <Home />
+      <div style={{ minHeight: '100vh' }}>
+        <Routes>
+          {' '}
+          // Antigo Switch
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/cadastro" element={<CadastroUsuario />} /> */}
+        </Routes>
+      </div>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 

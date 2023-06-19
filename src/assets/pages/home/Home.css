@@ -1,0 +1,23 @@
+.caixa {
+  background-color: #5b7bb2 ;
+}
+
+.titulo {
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.botao {
+  border: 0 !important ;
+  background: linear-gradient(45deg, #33ccff 30%, #66ffcc 90%) ;
+  height: 49px;
+  padding: 0 30px !important;
+  box-shadow: 0 3px 5px 2px rgba(102, 255, 204, .3);
+  border-radius: 12px !important;
+  color: white !important;
+  text-shadow: black 0.1em 0.1em 0.3em;
+}
+
+.postagem {
+  background-color: "white";
+}
