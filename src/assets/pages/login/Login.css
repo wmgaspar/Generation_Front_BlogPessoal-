@@ -7,7 +7,7 @@
 }
 
 .imagem {
-  background-image: url(asdas);
+  background-image: "./img/blog";
   background-repeat: no-repeat;
   width: 100vh;
   min-height: 100vh;

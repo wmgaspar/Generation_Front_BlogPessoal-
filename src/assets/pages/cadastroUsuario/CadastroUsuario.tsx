@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import './CadastroUsuario.css '
+import './CadastroUsuario.css'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import { Link, useNavigate } from 'react-router-dom'
 import User from '../../../models/User';

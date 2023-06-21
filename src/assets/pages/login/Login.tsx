@@ -3,7 +3,6 @@ import './Login.css'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import UserLogin from '../../../models/UserLogin'
-import useEnhancedEffect from '@mui/material/utils/useEnhancedEffect'
 import useLocalStorage from 'react-use-localstorage'
 import { login } from '../../../services/Service'
 
@@ -32,6 +31,7 @@ function Login() {
       alert('User logged in successfully')
     }catch (error) {
       alert('Dados incorretos')
+    }
   }
 
   useEffect(()=> {
@@ -40,12 +40,10 @@ function Login() {
     }
   }, [token])
 
-  
-
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
       <Grid xs={6} alignItems="center">
-        <Box padding={20}>
+        <Box paddingX={20}>
           <form onSubmit={onSubmit}>
             <Typography
               variant="h3"
@@ -77,12 +75,10 @@ function Login() {
               type="password"
               fullWidth
             />
-            <Box marginTop={2} textAlign="center">
-              
+            <Box marginTop={2} textAlign="center">              
                 <Button type="submit" variant="contained" color="primary">
                   Logar
-                </Button>
-              
+                </Button>              
             </Box>
           </form>
           <Box display="flex" justifyContent="center" marginTop={2}>
@@ -91,7 +87,7 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Link to="/cadastro" className="text-decorator-none">
+            <Link to="/cadastro">
               <Typography
                 variant="subtitle1"
                 gutterBottom
@@ -108,5 +104,6 @@ function Login() {
     </Grid>
   )
 }
+
 
 export default Login

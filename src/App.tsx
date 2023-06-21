@@ -5,8 +5,9 @@ import Home from './assets/pages/home/Home'
 import './App.css'
 import Login from './assets/pages/login/Login'
 import CadastroUsuario from './assets/pages/cadastroUsuario/CadastroUsuario'
-import { Copyright } from '@mui/icons-material'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import ListaTema from './components/temas/listatema/ListaTemas'
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem'
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/cadastro" element={<CadastroUsuario />} />
+          <Route path="/temas" element={<ListaTema />} />
+          <Route path="/posts" element={<ListaPostagem />} />
         </Routes>
       </div>
       <Footer />
