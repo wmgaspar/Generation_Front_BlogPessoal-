@@ -4,11 +4,11 @@
 
 .titulo {
   color: white !important;
-  font-weight: bold !important;
+  font-weight: bold ;
 }
 
 .botao {
-  border: 0 !important ;
+  border: 0 !important;
   background: linear-gradient(45deg, #33ccff 30%, #66ffcc 90%) ;
   height: 49px;
   padding: 0 30px !important;
@@ -19,5 +19,5 @@
 }
 
 .postagem {
-  background-color: "white";
+  background-color: white !important;
 }

@@ -1,15 +1,17 @@
 .box1 {
   background-color: #5b7bb2;
-    height: 120px;
+  height: 120px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .textos {
-  color: white !important;
+  color: white;
 }
 
 .linkedin {
   font-size: 30 ;
-  color: white !important;
+  color: white;
 }
 
 .github {
@@ -19,6 +21,8 @@
 
 .box2 {
   background-color: #82b1ff;
-    height: 60px;
+  height: 60px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
