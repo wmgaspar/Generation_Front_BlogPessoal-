@@ -1,8 +1,6 @@
 .box1 {
-  background-color: #5b7bb2;
-  height: 120px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  background-color: #093A3E;  
+
 }
 
 .textos {
@@ -20,8 +18,7 @@
 }
 
 .box2 {
-  background-color: #82b1ff;
-  height: 60px;
+  background-color: #64E9EE;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }

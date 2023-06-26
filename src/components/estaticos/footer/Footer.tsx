@@ -43,16 +43,7 @@ function Footer() {
             </Box>
           </Box>
           <Box className="box2">
-            <Box paddingTop={1}>
-              <Typography
-                variant="subtitle2"
-                align="center"
-                gutterBottom
-                className="textos"
-              >
-                © 2023 Copyright:
-              </Typography>
-            </Box>
+            
             <Box>
               <Typography
                 variant="subtitle2"
@@ -60,7 +51,7 @@ function Footer() {
                 className="textos"
                 align="center"
               >
-                Desenvolvido por Wesley Gaspar 🤟🏼{' '}
+                Desenvolvido por Wesley Gaspar 🤟🏼 © 2023 Copyright{' '}
               </Typography>
             </Box>
           </Box>

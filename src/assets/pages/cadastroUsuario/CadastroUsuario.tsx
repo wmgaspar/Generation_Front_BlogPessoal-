@@ -51,7 +51,7 @@ function CadastroUsuario() {
       cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
       alert('Usuario cadastrado com sucesso')
       }else{
-          alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+          alert('Dados inconsistentes.')
       }
   }
   return (
@@ -87,7 +87,7 @@ function CadastroUsuario() {
             />
             <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="senha"
-              label="senha"
+              label="senha com 8 dígitos"
               variant="outlined"
               name="senha"
               margin="normal"
@@ -96,7 +96,7 @@ function CadastroUsuario() {
             />            
             <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
               id="confirmarSenha"
-              label="confirmarSenha"
+              label="confirmar senha com 8 dígitos"
               variant="outlined"
               name="confirmarSenha"
               margin="normal"
