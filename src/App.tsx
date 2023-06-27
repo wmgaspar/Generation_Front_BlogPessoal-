@@ -11,9 +11,12 @@ import CadastroTema from './components/temas/cadastrotema/CadastroTema'
 import CadastroPost from './components/postagens/cadastroPost/CadastroPost'
 import DeletarPostagem from './components/postagens/deletarpostagem/DeletarPostagem'
 import DeletarTema from './components/temas/deletartema/DeletarTema'
+import { Provider } from 'react-redux'
+import store from './store/store'
 
 function App() {
   return (
+    <Provider store={store}>
     <BrowserRouter>
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
@@ -37,6 +40,7 @@ function App() {
       </div>
       <Footer />
     </BrowserRouter>
+    </Provider>
   )
 }
 
