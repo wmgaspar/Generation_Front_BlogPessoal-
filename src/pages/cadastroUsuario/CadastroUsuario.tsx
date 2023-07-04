@@ -5,9 +5,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import User from '../../models/User'
 import { cadastroUsuario } from '../../services/Service'
 import toast from 'react-hot-toast'
-import ImgCadastro from '../../assets/img/check.jpg'
+import ImgCadastro from '../../assets/img/caneca 2.jpg'
+
 
 function CadastroUsuario() {
+  
   let navigate = useNavigate()
   const [confirmarSenha, setConfirmarSenha] = useState<String>('')
   const [user, setUser] = useState<User>({

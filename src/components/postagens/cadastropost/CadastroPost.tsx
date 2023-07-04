@@ -6,17 +6,28 @@ import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokenReducer';
+import { toast } from 'react-hot-toast';
+import { addToken } from '../../../store/tokens/action';
 
 function CadastroPost() {
+
   let navigate = useNavigate();
+  const dispatch = useDispatch();
   const { id } = useParams<{ id: string }>();
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    (state) => state.tokens
+  );
+  
   const [temas, setTemas] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  
 
   useEffect(() => {
       if (token == "") {
-          alert("Você precisa estar logado")
-          navigate("/login")
+          toast.error("Você precisa estar logado")
+            dispatch(addToken(token))
+            navigate("/login")
 
       }
   }, [token])

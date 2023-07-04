@@ -12,8 +12,8 @@
 
 .imagem {
   background-repeat: no-repeat;
-  width: 500px !important;
-  height: 500px !important;
+  width: 100vh !important;
+  height: 100vh !important;
   background-size: cover;
   background-position: center;
 }

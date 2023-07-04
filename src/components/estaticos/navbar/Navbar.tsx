@@ -8,15 +8,17 @@ import { TokenState } from '../../../store/tokens/tokenReducer'
 import { addToken } from '../../../store/tokens/action'
 
 function Navbar() {
+
   const token = useSelector<TokenState, TokenState['tokens']>(
     (state) => state.tokens
   )
+  
   const dispatch = useDispatch()
   let navigate = useNavigate()
 
   function goLogout() {
-    dispatch(addToken(''))
     alert('Usuário deslogado')
+    dispatch(addToken(token))    
     navigate('/login')
   }
 

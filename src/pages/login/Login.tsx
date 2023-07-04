@@ -4,12 +4,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import { addToken } from '../../store/tokens/action'
 import { login } from '../../services/Service'
 import { useDispatch } from 'react-redux'
-import ImgLogin from '../../assets/img/Blog1.jpg'
+import ImgLogin from '../../assets/img/Caneca.jpg'
 import UserLogin from '../../models/UserLogin'
 import toast from 'react-hot-toast'
 import './Login.css'
 
 function Login() {
+
   let navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -105,8 +106,8 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      <Grid xs={6} className="imagem">
-        <img src={ImgLogin} alt="" width="500px" height="500px" />
+      <Grid xs={6} >
+        <img src={ImgLogin} alt="" className="imagem" />
       </Grid>
     </Grid>
   )

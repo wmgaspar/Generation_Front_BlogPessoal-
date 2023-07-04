@@ -1,23 +1,29 @@
 import { Button, Grid, Typography, Box } from '@material-ui/core'
 import { TokenState } from '../../store/tokens/tokenReducer'
 import { Link, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import ModalPostagem from '../../components/postagens/modalpostagem/ModalPostagem'
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem'
-import ImgHome from '../../assets/img/Blog.svg'
+import ImgHome from '../../assets/img/Caneca.jpg'
 import toast from 'react-hot-toast'
 import './Home.css'
+import { addToken } from '../../store/tokens/action'
 
 function Home() {
-  let navigate = useNavigate()
+
   const token = useSelector<TokenState, TokenState['tokens']>(
     state => state.tokens
   )
+  
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  
 
   useEffect(() => {
     if (token == '') {
       toast('Você precisa estar logado')
+      dispatch(addToken(""))
       navigate('/login')
     }
   }, [token])
