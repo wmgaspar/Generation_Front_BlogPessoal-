@@ -1,11 +1,13 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
-import { login } from '../../../services/Service'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
-import UserLogin from '../../../models/UserLogin'
-import './Login.css'
+import { ChangeEvent, useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { addToken } from '../../store/tokens/action'
+import { login } from '../../services/Service'
 import { useDispatch } from 'react-redux'
-import { addToken } from '../../../store/tokens/action'
+import ImgLogin from '../../assets/img/Blog1.jpg'
+import UserLogin from '../../models/UserLogin'
+import toast from 'react-hot-toast'
+import './Login.css'
 
 function Login() {
   let navigate = useNavigate()
@@ -21,30 +23,30 @@ function Login() {
 
   function updateModel(e: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
-      ...userLogin, 
-      [e.target.name] : e.target.value
+      ...userLogin,
+      [e.target.name]: e.target.value
     })
   }
 
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      await login(`usuario/logar`, userLogin,setToken)
-      alert('Usuário logado com sucesso')
-    }catch (error) {
-      alert('Dados incorretos')
+      await login(`usuario/logar`, userLogin, setToken)
+      toast.success('Usuário logado com sucesso')
+    } catch (error) {
+      toast.error('Dados incorretos')
     }
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     if (token != '') {
-      dispatch (addToken(token))
+      dispatch(addToken(token))
       navigate('/home')
     }
   }, [token])
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center" className='boxPai'>
       <Grid xs={6} alignItems="center">
         <Box paddingX={20}>
           <form onSubmit={onSubmit}>
@@ -59,7 +61,7 @@ function Login() {
             </Typography>
             <TextField
               value={userLogin.usuario}
-              onChange={(e:ChangeEvent<HTMLInputElement>)=> updateModel(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}
               id="usuario"
               label="usuário"
               variant="outlined"
@@ -69,7 +71,7 @@ function Login() {
             />
             <TextField
               value={userLogin.senha}
-              onChange={(e:ChangeEvent<HTMLInputElement>)=> updateModel(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)}
               id="senha"
               label="senha"
               variant="outlined"
@@ -78,10 +80,10 @@ function Login() {
               type="password"
               fullWidth
             />
-            <Box marginTop={2} textAlign="center">              
-                <Button type="submit" variant="contained" color="primary">
-                  Logar
-                </Button>              
+            <Box marginTop={2} textAlign="center">
+              <Button type="submit" variant="contained" color="primary">
+                Logar
+              </Button>
             </Box>
           </form>
           <Box display="flex" justifyContent="center" marginTop={2}>
@@ -103,10 +105,11 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      <Grid xs={6} className="imagem"></Grid>
+      <Grid xs={6} className="imagem">
+        <img src={ImgLogin} alt="" width="500px" height="500px" />
+      </Grid>
     </Grid>
   )
 }
-
 
 export default Login

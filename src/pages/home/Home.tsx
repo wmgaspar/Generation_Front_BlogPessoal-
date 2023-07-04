@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react'
 import { Button, Grid, Typography, Box } from '@material-ui/core'
-import './Home.css'
-import ImgHome from '../../../assets/img/Blog.svg'
-import TabPostagem from '../../../components/postagens/tabpostagem/TabPostagem'
-import ModalPostagem from '../../../components/postagens/modalpostagem/ModalPostagem'
+import { TokenState } from '../../store/tokens/tokenReducer'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { TokenState } from '../../../store/tokens/tokenReducer'
+import { useEffect } from 'react'
+import ModalPostagem from '../../components/postagens/modalpostagem/ModalPostagem'
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem'
+import ImgHome from '../../assets/img/Blog.svg'
+import toast from 'react-hot-toast'
+import './Home.css'
 
 function Home() {
   let navigate = useNavigate()
@@ -16,7 +17,7 @@ function Home() {
 
   useEffect(() => {
     if (token == '') {
-      alert('Você precisa estar logado')
+      toast('Você precisa estar logado')
       navigate('/login')
     }
   }, [token])
